@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
+//todo: set active class on list item
 const NavigationWrapper = styled.nav`
   position: absolute;
   top: 2rem;
@@ -33,30 +34,14 @@ const NavigationListItem = styled.li`
   font-size: 1.5rem;
   margin-left: 4rem;
   position: relative;
-  
-  
-  //::after{
-  //  position: absolute;
-  //  display: block;
-  //  top: -1px;
-  //  left: -3px;
-  //  content: '';
-  //  width: 7rem;
-  //  height: 3rem;
-  //  border: 3px solid #000;
-  //  transition: all .3s;
-  //}
-  //
-  //&:hover:after{
-  //transform: translate(-5px, -5px);
-  //cursor: pointer;
-  //}
+
 `;
 
 const NavigationListItemLink = styled(Link)`
  ::after{
     position: absolute;
     display: block;
+    opacity: 0;
     top: -1px;
     left: -3px;
     content: '';
@@ -67,10 +52,12 @@ const NavigationListItemLink = styled(Link)`
   }
   
   &:hover:after{
+  opacity: 1;
   transform: translate(-5px, -5px);
-  cursor: pointer;
+  box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.75);
   }
-`
+`;
+
 
 
 
@@ -79,7 +66,8 @@ const Navigation = () => (
     <Logo><Link to="/">TTO</Link></Logo>
     <NavigationList>
       <NavigationListItem>
-        <NavigationListItemLink to="/blog">Blog</NavigationListItemLink>
+        <NavigationListItemLink  to="/blog">
+          Blog</NavigationListItemLink>
       </NavigationListItem>
       <NavigationListItem>
         <NavigationListItemLink to="/about">O mnie</NavigationListItemLink>
