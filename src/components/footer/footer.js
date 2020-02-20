@@ -6,7 +6,7 @@ position: absolute;
 bottom: 0;
 left: 0;
 width: 60%;
-height: 50px;
+height: 5rem;
 `;
 
 const FooterContent = styled.p`

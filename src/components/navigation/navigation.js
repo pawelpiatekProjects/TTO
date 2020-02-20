@@ -4,8 +4,8 @@ import { Link } from 'gatsby';
 
 const NavigationWrapper = styled.nav`
   position: absolute;
-  top: 20px;
-  left: 30px;
+  top: 2rem;
+  left: 3rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -19,7 +19,7 @@ const NavigationWrapper = styled.nav`
 
 const Logo = styled.span`
   font-weight: 700;
-  font-size: 20px;
+  font-size: 2rem;
   margin-right: 10px;
 `;
 
@@ -30,19 +30,38 @@ const NavigationList = styled.ul`
 
 const NavigationListItem = styled.li`
   font-weight: 600;
-  font-size: 15px;
-  margin-left: 40px;
+  font-size: 1.5rem;
+  margin-left: 4rem;
   position: relative;
   
   
-  ::after{
+  //::after{
+  //  position: absolute;
+  //  display: block;
+  //  top: -1px;
+  //  left: -3px;
+  //  content: '';
+  //  width: 7rem;
+  //  height: 3rem;
+  //  border: 3px solid #000;
+  //  transition: all .3s;
+  //}
+  //
+  //&:hover:after{
+  //transform: translate(-5px, -5px);
+  //cursor: pointer;
+  //}
+`;
+
+const NavigationListItemLink = styled(Link)`
+ ::after{
     position: absolute;
     display: block;
     top: -1px;
     left: -3px;
     content: '';
-    width: 70px;
-    height: 30px;
+    width: 7rem;
+    height: 3rem;
     border: 3px solid #000;
     transition: all .3s;
   }
@@ -51,7 +70,7 @@ const NavigationListItem = styled.li`
   transform: translate(-5px, -5px);
   cursor: pointer;
   }
-`;
+`
 
 
 
@@ -60,10 +79,10 @@ const Navigation = () => (
     <Logo><Link to="/">TTO</Link></Logo>
     <NavigationList>
       <NavigationListItem>
-        <Link to="/blog">Blog</Link>
+        <NavigationListItemLink to="/blog">Blog</NavigationListItemLink>
       </NavigationListItem>
       <NavigationListItem>
-        <Link to="/about">O mnie</Link>
+        <NavigationListItemLink to="/about">O mnie</NavigationListItemLink>
       </NavigationListItem>
     </NavigationList>
   </NavigationWrapper>

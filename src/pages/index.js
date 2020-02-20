@@ -6,7 +6,7 @@ import { graphql } from "gatsby"
 const MainPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 13rem);
   width: 60%;
 `
 
@@ -16,15 +16,34 @@ top: 0;
 right: 0;
 height: 100vh;
 width: 40%;
+`;
+
+const MainPageHeader = styled.h1`
+text-align: right;
+font-size: 6rem;
+margin-top: 14rem;
+  span{
+  display: block;
+  }
+`;
+
+const MainPageContent = styled.p`
+width: 70%;
+margin: 8rem auto;
 `
 
 
 const IndexPage = ({ data }) => (
   <>
     <MainPageWrapper>
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
+      <MainPageHeader>To tylko <span>opinie</span></MainPageHeader>
+      <MainPageContent>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Suspendisse et consectetur eros. Mauris at quam vitae leo vehicula condimentum.
+        Aliquam augue neque, euismod eget cursus in, ultricies elementum odio.
+        Vestibulum pellentesque nisl at arcu aliquam, a pretium enim porta.
+        Aliquam maximus velit augue, eu gravida nulla gravida vitae.
+      </MainPageContent>
 
     </MainPageWrapper>
     <GatsbyImage fluid={data.file.childImageSharp.fluid}/>
