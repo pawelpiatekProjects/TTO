@@ -19,7 +19,15 @@ const NavigationItem = styled.li`
 const Navigation = () =>(
   <NavigationWrapper>
     <Navigation>
-
+      <NavigationItem>
+        <Link to="/">TTO</Link>
+      </NavigationItem>
+      <NavigationItem>
+        <Link to="/blog">BLog</Link>
+      </NavigationItem>
+      <NavigationItem>
+        <Link to="/about">O mnie</Link>
+      </NavigationItem>
     </Navigation>
   </NavigationWrapper>
 );
