@@ -11,6 +11,7 @@ height: 5rem;
 
 const FooterContent = styled.p`
 text-align: center;
+font-size: 1.4rem;
 `;
 
 const Footer = () =>(

@@ -7,7 +7,7 @@ const MainPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: calc(100vh - 13rem);
-  width: 60%;
+  width: 55%;
 `
 
 const GatsbyImage = styled(Image)`
@@ -15,13 +15,13 @@ position: absolute !important;
 top: 0;
 right: 0;
 height: 100vh;
-width: 40%;
+width: 45%;
 `;
 
 const MainPageHeader = styled.h1`
 text-align: right;
 font-size: 6rem;
-margin-top: 14rem;
+margin: 14rem 3rem 5rem 0;
   span{
   display: block;
   }
@@ -30,7 +30,7 @@ margin-top: 14rem;
 const MainPageContent = styled.p`
 width: 70%;
 margin: 8rem auto;
-`
+`;
 
 
 const IndexPage = ({ data }) => (
@@ -62,7 +62,7 @@ export const query = graphql`
         }
     }
 
-`
+`;
 
 
 export default IndexPage
