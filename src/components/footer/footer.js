@@ -5,7 +5,8 @@ const FooterWrapper = styled.div`
 position: absolute;
 bottom: 0;
 left: 0;
-width: 100%;
+width: 60%;
+height: 50px;
 `;
 
 const FooterContent = styled.p`
