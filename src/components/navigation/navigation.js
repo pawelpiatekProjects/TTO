@@ -34,6 +34,7 @@ const NavigationListItem = styled.li`
   margin-left: 40px;
   position: relative;
   
+  
   ::after{
     position: absolute;
     display: block;
@@ -43,10 +44,12 @@ const NavigationListItem = styled.li`
     width: 70px;
     height: 30px;
     border: 3px solid #000;
+    transition: all .3s;
   }
   
-  &:hover{
-  
+  &:hover:after{
+  transform: translate(-5px, -5px);
+  cursor: pointer;
   }
 `;
 
