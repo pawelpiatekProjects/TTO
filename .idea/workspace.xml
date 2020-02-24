@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bc0751b-6d13-4a97-b2d5-8c420ebd3885" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/articlePreview/articlePreview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/variables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog.js" afterDir="false" />
-    </list>
+    <list default="true" id="0bc0751b-6d13-4a97-b2d5-8c420ebd3885" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -247,18 +243,17 @@
       <option name="presentableId" value="Default" />
       <updated>1582217639231</updated>
       <workItem from="1582217642061" duration="9055000" />
-      <workItem from="1582547987184" duration="13774000" />
+      <workItem from="1582547987184" duration="14040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22829000" />
+    <option name="totallyTimeSpent" value="23095000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11409396" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11409396" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -276,7 +271,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.20067114" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.20067114" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
