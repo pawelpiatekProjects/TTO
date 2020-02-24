@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import {graphql} from 'gatsby';
-import Image from "gatsby-image"
+import Image from "gatsby-image";
+import BackgroundImage from 'gatsby-background-image';
 
 export const querry = graphql`
     query MyQuery($id: String!) {
@@ -9,8 +10,8 @@ export const querry = graphql`
             title
             author
             featuredImage {
-                fixed{
-                    ...GatsbyDatoCmsFixed_tracedSVG
+                fluid{
+                    ...GatsbyDatoCmsFluid_tracedSVG
                 }
             }
             articleContent{
@@ -24,8 +25,8 @@ export const querry = graphql`
                 }
                 ... on DatoCmsImage{
                     imageData{
-                        fixed{
-                            ...GatsbyDatoCmsFixed_tracedSVG
+                        fluid{
+                            ...GatsbyDatoCmsFluid_tracedSVG
                         }
                     }
                     id
@@ -36,7 +37,8 @@ export const querry = graphql`
 `;
 
 const PostLayoutWrapper = styled.div`
-
+  width: 80%;
+  margin: 0 auto;
 `;
 
 const PostLatoutTitle = styled.h1`
@@ -44,6 +46,10 @@ const PostLatoutTitle = styled.h1`
 `;
 
 const PostLayoutAuthor = styled.h3`
+
+`;
+
+const ArticleContent = styled.div`
 
 `;
 
@@ -62,24 +68,26 @@ const ArticleContentImage = styled(Image)`
 
 const PostLayout = ({data}) =>(
   <PostLayoutWrapper>
-    <h1>{data.datoCmsArticle.title}</h1>
-    <h1>{data.datoCmsArticle.author}</h1>
-    {/*<Image fixed={data.featuredImage.fixed}/>*/}
-    <div>{data.datoCmsArticle.articleContent.map(el=>{
+
+    <BackgroundImage fluid={data.datoCmsArticle.featuredImage.fluid}>
+      <PostLatoutTitle>{data.datoCmsArticle.title}</PostLatoutTitle>
+      <PostLayoutAuthor>{data.datoCmsArticle.author}</PostLayoutAuthor>
+    </BackgroundImage>
+    <ArticleContent>{data.datoCmsArticle.articleContent.map(el=>{
       const key = el.__typename
       switch (key) {
         case "DatoCmsHeader": {
-          return <h1 key={el.id}>{el.headingContent}</h1>
+          return <ArticleContentHeader key={el.id}>{el.headingContent}</ArticleContentHeader>
         }
         case "DatoCmsParagraph": {
-          return <p key={el.id}>{el.paragraphContent}</p>
+          return <ArticleContentParagraph key={el.id}>{el.paragraphContent}</ArticleContentParagraph>
         }
         case "DatoCmsImage": {
-          return <Image key={el.id} fixed={el.imageData.fixed}/>
+          return <ArticleContentImage key={el.id} fluid={el.imageData.fluid}/>
         }
         default: return null;
       }
-    })}</div>
+    })}</ArticleContent>
 
   </PostLayoutWrapper>
 );
