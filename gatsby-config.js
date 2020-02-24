@@ -28,6 +28,14 @@ module.exports = {
         ],
       },
     },
+    //todo: move api token to .env
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: `c9e64ce7fe435923458d856e477881`,
+
+      }
+    },
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
