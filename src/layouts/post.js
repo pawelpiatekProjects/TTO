@@ -6,6 +6,7 @@ import BackgroundImage from 'gatsby-background-image';
 import * as colors from '../assets/styles/variables';
 import Star from "../components/star/star"
 
+//todo: fix font to latin
 export const querry = graphql`
     query MyQuery($id: String!) {
         datoCmsArticle(id: {eq: $id}) {
@@ -40,7 +41,7 @@ export const querry = graphql`
 `;
 
 const PostLayoutWrapper = styled.div`
-  width: 80%;
+  width: 60%;
   margin: 5rem auto;
 `;
 
@@ -88,7 +89,7 @@ const ArticleContentImage = styled(Image)`
 `;
 
 const ArticleRate = styled.div`
-width: 80%;
+width: 60%;
 margin: 2rem auto;
 text-align: center;
 padding: 3rem;

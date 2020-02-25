@@ -38,19 +38,10 @@ const About = ({data}) =>(
     <AboutPageContent>
     <AboutPageHeader>O mnie</AboutPageHeader>
     <AboutPageText>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Suspendisse et consectetur eros. Mauris at quam vitae leo vehicula
-      condimentum. Aliquam augue neque, euismod eget cursus in, ultricies
-      elementum odio. Vestibulum pellentesque nisl at arcu aliquam,
-      a pretium enim porta. Aliquam maximus velit augue, eu gravida
-      nulla gravida vitae.
+      {data.allDatoCmsAbout.nodes[0].aboutContent}
     </AboutPageText>
       <AboutPageText>
-        Ut dignissim orci vitae elit ullamcorper rhoncus.
-        Donec malesuada mollis fermentum. Vestibulum vel interdum ex.
-        Aenean a accumsan lorem, sit amet maximus mauris. Curabitur ultricies
-        hendrerit lorem, a dapibus ex aliquam non. Suspendisse luctus
-        feugiat arcu, maximus sodales nunc mattis ornare.
+        {data.allDatoCmsAbout.nodes[0].aboutContent2}
       </AboutPageText>
     </AboutPageContent>
 
@@ -66,6 +57,12 @@ export const query = graphql`
                 fluid{
                     ... GatsbyImageSharpFluid_tracedSVG
                 }
+            }
+        }
+        allDatoCmsAbout {
+            nodes{
+                aboutContent
+                aboutContent2
             }
         }
     }

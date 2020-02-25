@@ -18,8 +18,8 @@ font-size: 1.6rem;
 
 const Articles = styled.div`
 display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-row-gap: 3rem;
+grid-template-columns: repeat(2, 1fr);
+grid-row-gap: 8rem;
 grid-column-gap: 10rem;
 `;
 

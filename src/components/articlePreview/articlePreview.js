@@ -49,7 +49,7 @@ position: relative;
 `;
 
 const ArticlePreviewImage = styled(BackgroundImage)`
-width: 50rem;
+width: 100%;
 height: 25rem;
 position: relative;
 box-shadow: 1px 1px 13px -4px rgba(0,0,0,0.75);

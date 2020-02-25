@@ -39,11 +39,7 @@ const IndexPage = ({ data }) => (
     <MainPageWrapper>
       <MainPageHeader>To tylko <span>opinie</span></MainPageHeader>
       <MainPageContent>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Suspendisse et consectetur eros. Mauris at quam vitae leo vehicula condimentum.
-        Aliquam augue neque, euismod eget cursus in, ultricies elementum odio.
-        Vestibulum pellentesque nisl at arcu aliquam, a pretium enim porta.
-        Aliquam maximus velit augue, eu gravida nulla gravida vitae.
+        {data.allDatoCmsIntro.nodes[0].introTitle}
       </MainPageContent>
       <Footer/>
     </MainPageWrapper>
@@ -61,9 +57,15 @@ export const query = graphql`
                 }
             }
         }
+        allDatoCmsIntro {
+            nodes{
+                introTitle
+            }
+        }
     }
 
 `;
+
 
 
 export default IndexPage
