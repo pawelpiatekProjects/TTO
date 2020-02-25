@@ -4,12 +4,14 @@ import {graphql} from 'gatsby';
 import Image from "gatsby-image";
 import BackgroundImage from 'gatsby-background-image';
 import * as colors from '../assets/styles/variables';
+import Star from "../components/star/star"
 
 export const querry = graphql`
     query MyQuery($id: String!) {
         datoCmsArticle(id: {eq: $id}) {
             title
             author
+            rate
             featuredImage {
                 fluid{
                     ...GatsbyDatoCmsFluid_tracedSVG
@@ -85,9 +87,21 @@ const ArticleContentImage = styled(Image)`
 
 `;
 
+const ArticleRate = styled.div`
+width: 80%;
+margin: 2rem auto;
+text-align: center;
+padding: 3rem;
+border-top: 3px solid ${colors.lightGray};
+border-bottom: 3px solid ${colors.lightGray};
+`;
+
+
 
 const PostLayout = ({data}) => {
 const title = `"${data.datoCmsArticle.title}"`;
+console.log(data.datoCmsArticle.rate)
+const n=10;
   return(
   <PostLayoutWrapper>
     <PostLayoutImage fluid={data.datoCmsArticle.featuredImage.fluid}>
@@ -112,6 +126,11 @@ const title = `"${data.datoCmsArticle.title}"`;
           return null;
       }
     })}</ArticleContent>
+    <ArticleRate>
+      {[...Array(n)].map((el, i)=> (
+        <Star key={i} num={i} stars={data.datoCmsArticle.rate}/>
+        ))}
+    </ArticleRate>
 
   </PostLayoutWrapper>
   )
