@@ -8,18 +8,28 @@ import slugify from 'slugify';
 const BlogPageWrapper = styled.div`
 width: 80%;
 margin: 5rem auto;
-`
+`;
+
+const BlogPageText = styled.p`
+width: 50%;
+margin: 8rem 0;
+font-size: 1.6rem;
+`;
 
 const Articles = styled.div`
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 grid-row-gap: 3rem;
 grid-column-gap: 10rem;
-`
+`;
 
 const Blog = ({ data }) => (
   <BlogPageWrapper>
-    <h1>Blog page</h1>
+    <BlogPageText>
+        Morbi nec odio id metus blandit rutrum quis volutpat urna.
+        Phasellus nibh ante, mattis sed elit in, imperdiet venenatis ex.
+        Aenean interdum aliquet lorem, sit amet cursus ex suscipit eu.
+    </BlogPageText>
     <Articles>
       {data.allDatoCmsArticle.nodes.map(article => {
           const slug=slugify(article.title,{lower: true})

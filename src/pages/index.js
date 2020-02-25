@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Image from "gatsby-image"
 import { graphql } from "gatsby"
+import Footer from "../components/footer/footer"
 
 const MainPageWrapper = styled.div`
   display: flex;
@@ -44,7 +45,7 @@ const IndexPage = ({ data }) => (
         Vestibulum pellentesque nisl at arcu aliquam, a pretium enim porta.
         Aliquam maximus velit augue, eu gravida nulla gravida vitae.
       </MainPageContent>
-
+      <Footer/>
     </MainPageWrapper>
     <GatsbyImage fluid={data.file.childImageSharp.fluid}/>
   </>
