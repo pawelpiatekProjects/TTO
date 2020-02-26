@@ -70,8 +70,9 @@ font-size: 5rem;
 }
 
 @media(max-width: 500px){
-width: 100%;
+
 font-size: 4rem;
+
 
 &::before{
 content: '';
@@ -86,7 +87,7 @@ left: 1.5rem;
 }
 
 @media(max-width: 350px){
-width: 100%;
+width: 90%;
 font-size: 3rem;
 padding: 3rem;
 
