@@ -45,15 +45,15 @@ const PostLayoutWrapper = styled.div`
   margin: 5rem auto;
   
   @media(max-width: 1200px){
-width: 70%;
-}
-  @media(max-width: 900px){
 width: 80%;
 }
-  @media(max-width: 750px){
-width: 90%;
+  @media(max-width: 900px){
+width: 85%;
 }
-  @media(max-width: 1200px){
+  @media(max-width: 800px){
+width: 95%;
+}
+  @media(max-width: 650px){
 width: 100%;
 }
 `;
@@ -63,6 +63,10 @@ width: 100%;
 const PostLayoutImage = styled(BackgroundImage)`
 position: absolute;
 height: 40rem;
+
+@media(max-width: 500px){
+height: 30rem;
+}
 `;
 
 const ArticleIntro = styled.div`
@@ -71,11 +75,19 @@ left: 0;
 top: 22rem;
 padding: 2rem;
 background-color: ${colors.white};
+
+@media(max-width: 500px){
+top: 15rem;
+}
 `;
 
 const PostLatoutTitle = styled.h1`
 font-size: 3rem;
 margin: 0;
+
+  @media(max-width: 400px){
+font-size: 2rem;
+}
 `;
 
 const PostLayoutAuthor = styled.h3`
@@ -109,7 +121,14 @@ padding: 3rem;
 border-top: 3px solid ${colors.lightGray};
 border-bottom: 3px solid ${colors.lightGray};
 
+@media(max-width: 1500px){
+width: 80%;
+}
 
+@media(max-width: 700px){
+width: 100%;
+border-top: 2px solid ${colors.lightGray};
+border-bottom: 2px solid ${colors.lightGray};
 }
 `;
 

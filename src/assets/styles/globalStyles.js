@@ -31,8 +31,8 @@ html {
     padding: 8rem 6.5rem 0;
     font-family: 'Montserrat';
     
-    @media(max-width: 500px){
-    padding: 8rem 4rem 0;
+    @media(max-width: 550px){
+    padding: 8rem 0;
     }
   }
 

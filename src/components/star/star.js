@@ -20,6 +20,18 @@ position: relative;
   /* Controlls the size of the stars. */
   font-size: 1.8rem;
   
+  @media(max-width: 1050px){
+  font-size: 1.3rem;
+  }
+  
+  @media(max-width: 700px){
+  font-size: 1rem;
+  }
+  
+
+  
+ 
+  
   &:before, &:after {
     content: '';
     
