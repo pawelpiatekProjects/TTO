@@ -43,6 +43,19 @@ export const querry = graphql`
 const PostLayoutWrapper = styled.div`
   width: 60%;
   margin: 5rem auto;
+  
+  @media(max-width: 1200px){
+width: 70%;
+}
+  @media(max-width: 900px){
+width: 80%;
+}
+  @media(max-width: 750px){
+width: 90%;
+}
+  @media(max-width: 1200px){
+width: 100%;
+}
 `;
 
 
@@ -95,6 +108,9 @@ text-align: center;
 padding: 3rem;
 border-top: 3px solid ${colors.lightGray};
 border-bottom: 3px solid ${colors.lightGray};
+
+
+}
 `;
 
 

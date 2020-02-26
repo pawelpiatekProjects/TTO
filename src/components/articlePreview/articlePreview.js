@@ -55,7 +55,13 @@ position: relative;
 box-shadow: 1px 1px 13px -4px rgba(0,0,0,0.75);
 border: 2px solid ${colors.darkGray};
 
-  
+ @media(max-width: 450px){
+ height: 20rem;
+ }
+ 
+ @media(max-width: 350px){
+ height: 15rem;
+ }
 
 `;
 
@@ -69,6 +75,14 @@ width: 100%;
 padding: 2rem;
 transition: all .5s;
 transition-delay: .2s;
+
+@media(max-width: 450px){
+ font-size: 1.2rem;
+ }
+ 
+ @media(max-width: 350px){
+ font-size: 1rem;
+ }
 `;
 
 const ArticlePreview = ({title, image,slug}) => {

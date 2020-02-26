@@ -14,6 +14,18 @@ const BlogPageText = styled.p`
 width: 50%;
 margin: 8rem 0;
 font-size: 1.6rem;
+
+@media(max-width: 950px){
+width: 80%;
+}
+
+@media(max-width: 600px){
+width: 90%;
+}
+
+@media(max-width: 450px){
+width: 100%;
+}
 `;
 
 const Articles = styled.div`
@@ -21,6 +33,10 @@ display: grid;
 grid-template-columns: repeat(2, 1fr);
 grid-row-gap: 8rem;
 grid-column-gap: 10rem;
+
+@media(max-width: 950px){
+grid-template-columns:  1fr;
+}
 `;
 
 const Blog = ({ data }) => (
