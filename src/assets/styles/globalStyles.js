@@ -6,6 +6,18 @@ const GlobalStyle = createGlobalStyle`
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+    
+    @media(max-width: 1200px){
+    font-size: 50%;
+    }
+    
+    //@media(max-width: 900px){
+    //font-size: 45%;
+    //}
+    //
+    //@media(max-width: 700px){
+    //font-size: 35%;
+    //}
   }
 
   *,
@@ -16,8 +28,12 @@ html {
 
   body {
     margin: 0;
-    padding: 80px 65px 0;
+    padding: 8rem 6.5rem 0;
     font-family: 'Montserrat';
+    
+    @media(max-width: 500px){
+    padding: 8rem 4rem 0;
+    }
   }
 
   button {
