@@ -20,11 +20,13 @@ width: 60%;
 
 @media(max-width: 900px){
 width: 100%;
- 
+ }
 `
 
 const ContactFormWrapper = styled.div`
-  
+  @media(max-width: 900px){
+  margin-top: 15rem;
+  }
 `;
 
 const ContactFormHeader = styled(IntroHeader)`
@@ -40,12 +42,29 @@ margin-top: 14rem;
   right: 0;
   top: 0;
   margin: 0;
+    
   }
   div{
   display: inline-block;
   margin-top: 2rem;
+   
   }
+  
+  @media(max-width: 900px){
+  margin-top: 5rem;
+    h1{
+    display: block;
+    right: 50%;
+    top: 10rem;
+    transform: translate(50%);
+    }
+    div{
+    display: block;
+    }
+ }
 `;
+
+
 
 
 const ContactPaggeImage = styled(Image)`

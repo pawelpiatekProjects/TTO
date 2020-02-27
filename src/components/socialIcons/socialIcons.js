@@ -5,7 +5,10 @@ import {faFacebookF, faInstagram, faTwitter} from "@fortawesome/free-brands-svg-
 import * as colors from '../../assets/styles/variables';
 
 const SocialIconsWrapper = styled.div`
+  @media(max-width: 900px){
+text-align: center;
 
+}
 `;
 
 //todo: add links to social icons

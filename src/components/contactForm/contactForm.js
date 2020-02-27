@@ -10,6 +10,15 @@ const ContactFormWrapper = styled.div`
 const Form = styled.form`
 width: 60%;
 margin: 10rem auto;
+
+@media(max-width: 700px){
+width: 80%;
+}
+
+@media(max-width: 600px){
+width: 100%;
+}
+
 `
 
 const Input = styled.input`
@@ -19,6 +28,10 @@ padding: 1rem;
 
 outline: none;
 border: 3px solid ${colors.darkGray};
+
+@media(max-width: 350px){
+width: 100%;
+}
 `
 
 const TextArea = styled(Field)`
