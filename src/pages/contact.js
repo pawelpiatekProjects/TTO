@@ -3,6 +3,8 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import ContactForm from "../components/contactForm/contactForm";
 import {graphql} from 'gatsby';
+import IntroHeader from '../components/introHeader/introHeader';
+import SocialIcons from '../components/socialIcons/socialIcons';
 
 
 const ContactPageWrapper = styled.div`
@@ -10,6 +12,7 @@ const ContactPageWrapper = styled.div`
   flex-direction: column;
  height: calc(100vh - 13rem);
   width: 55%;
+  padding: 3rem;
  
 `;
 
@@ -17,9 +20,11 @@ const ContactFormWrapper = styled.div`
   
 `;
 
-const ContactPageHeader = styled.h1`
+const ContactFormHeader = styled(IntroHeader)`
 
 `;
+
+
 
 const ContactPaggeImage = styled(Image)`
   position: absolute !important;
@@ -33,7 +38,8 @@ width: 45%;
 const ContactPage = ({data}) => (
   <>
   <ContactPageWrapper>
-    <ContactPageHeader>Kontakt</ContactPageHeader>
+    <SocialIcons/>
+    <ContactFormHeader>Kontakt</ContactFormHeader>
     <ContactFormWrapper>
 
     </ContactFormWrapper>
