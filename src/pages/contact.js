@@ -13,6 +13,13 @@ const ContactPageWrapper = styled.div`
  height: calc(100vh - 13rem);
   width: 55%;
   padding: 3rem;
+  
+    @media(max-width: 1200px){
+width: 60%;
+}
+
+@media(max-width: 900px){
+width: 100%;
  
 `
 
@@ -47,6 +54,14 @@ top: 0;
 right: 0;
 height: 100vh;
 width: 45%;
+
+@media(max-width: 1200px){
+width: 40%;
+}
+
+@media(max-width: 900px){
+display: none;
+}
 
 `
 

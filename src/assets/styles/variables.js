@@ -3,3 +3,4 @@ export const white = "#ffffff";
 export const darkGray = "#222222";
 export const lightGray = "#aaaaaa";
 export const lightGray2 = "#EAEAEA";
+export const errorRed = "#ff4c4c";

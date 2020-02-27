@@ -1,39 +1,46 @@
-import React from 'react';
-import styled from 'styled-components';
-import {Formik} from 'formik';
-import * as colors from '../../assets/styles/variables';
+import React from "react"
+import styled from "styled-components"
+import { Formik, Field } from "formik"
+import * as colors from "../../assets/styles/variables"
 
 const ContactFormWrapper = styled.div`
 
-`;
+`
 
 const Form = styled.form`
 width: 60%;
 margin: 10rem auto;
-`;
+`
 
 const Input = styled.input`
 display: block;
 width: 80%;
 padding: 1rem;
-margin-bottom: 2rem;
+
 outline: none;
 border: 3px solid ${colors.darkGray};
-`;
+`
 
-const TextArea = styled.textarea`
+const TextArea = styled(Field)`
 display: block;
-margin-bottom: 2rem;
 width: 100%;
 border: 3px solid ${colors.darkGray};
 outline: none;
-`;
+`
 
 const Label = styled.label`
 font-weight: 700;
 font-size: 1.8rem;
 
-`;
+`
+
+const Error = styled.p`
+height: 2rem;
+margin-top: 0;
+margin-bottom: .5rem;
+font-size: 1.4rem;
+color: ${colors.errorRed};
+`
 
 const Button = styled.button`
 border: none;
@@ -43,6 +50,7 @@ font-weight: 700;
 position: relative;
 transition: all .3s;
 margin-left: .8rem;
+margin-top: 2rem;
 
 &::before{
 content: '';
@@ -84,28 +92,37 @@ height: 100%;
 
 `;
 
+const textArea = ({field, formik, ...props}) => {
+  return <textarea {...field} {...props}></textarea>
+}
 
 
 const ContactForm = () => (
   <ContactFormWrapper>
     <Formik
-      initialValues={{ email: '', password: '' }}
+      initialValues={{ email: "", name: "", message: ""}}
       validate={values => {
-        const errors = {};
+        const errors = {}
         if (!values.email) {
-          errors.email = 'Required';
+          errors.email = "E-mail jest wymagany"
         } else if (
           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
         ) {
-          errors.email = 'Invalid email address';
+          errors.email = "Nieprawidłowy adres email"
         }
-        return errors;
+        if(!values.name){
+          errors.name = "Imię i nazwisko są wymagane"
+        }
+        if(!values.message){
+          errors.message = "Wiadomość jest wymagana"
+        }
+        return errors
       }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+          alert(JSON.stringify(values, null, 2))
+          setSubmitting(false)
+        }, 400)
       }}
     >
       {({
@@ -121,24 +138,31 @@ const ContactForm = () => (
         <Form onSubmit={handleSubmit}>
           <Label>Imię i nazwisko</Label>
           <Input
+            type="name"
+            name="name"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.name}
+          />
+          <Error>
+            {errors.name && touched.name && errors.name}
+          </Error>
+          <Label>E-mail</Label>
+          <Input
             type="email"
             name="email"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
           />
-          {errors.email && touched.email && errors.email}
-          <Label>E-mail</Label>
-          <Input
-            type="password"
-            name="password"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.password}
-          />
-          {errors.password && touched.password && errors.password}
+          <Error>
+            {errors.email && touched.email && errors.email}
+          </Error>
           <Label>Wiadomość</Label>
-          <TextArea rows="7"></TextArea>
+          <TextArea name="message" placeholder="" component={textArea} rows="7"></TextArea>
+          <Error>
+            {errors.message && touched.message && errors.message}
+          </Error>
           <Button type="submit" disabled={isSubmitting}>
             Wyślij
           </Button>
@@ -146,6 +170,6 @@ const ContactForm = () => (
       )}
     </Formik>
   </ContactFormWrapper>
-);
+)
 
-export default ContactForm;
+export default ContactForm
