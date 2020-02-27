@@ -72,6 +72,9 @@ const Navigation = () => (
       <NavigationListItem>
         <NavigationListItemLink to="/about">O mnie</NavigationListItemLink>
       </NavigationListItem>
+      <NavigationListItem>
+        <NavigationListItemLink to="/contact">Kontakt</NavigationListItemLink>
+      </NavigationListItem>
     </NavigationList>
   </NavigationWrapper>
 );

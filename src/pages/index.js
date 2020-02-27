@@ -4,6 +4,7 @@ import Image from "gatsby-image"
 import { graphql } from "gatsby"
 import Footer from "../components/footer/footer"
 import * as colors from '../assets/styles/variables';
+import IntroHeader from '../components/introHeader/introHeader';
 
 const MainPageWrapper = styled.div`
   display: flex;
@@ -36,74 +37,6 @@ display: none;
 }
 `;
 
-const MainPageHeader = styled.h1`
-text-align: right;
-font-size: 6rem;
-position: relative;
-margin: 14rem 3rem 5rem 0;
-  span{
-  display: block;
-  }
-  
-  @media(max-width: 900px){
-width: 60%;
-margin: 20rem auto 10rem auto;
-text-align: center;
-padding: 5rem;
-background-color: ${colors.lightGray2};
-
-&::before{
-content: '';
-display: block;
-position: absolute;
-width: 100%;
-height: 100%;
-border: 4px solid ${colors.darkGray};
-top: -2rem;
-left: 2rem;
-}
-}
-
-@media(max-width: 700px){
-width: 80%;
-font-size: 5rem;
-}
-
-@media(max-width: 500px){
-
-font-size: 4rem;
-
-
-&::before{
-content: '';
-display: block;
-position: absolute;
-width: 100%;
-height: 100%;
-border: 4px solid ${colors.darkGray};
-top: -1.5rem;
-left: 1.5rem;
-}
-}
-
-@media(max-width: 350px){
-width: 90%;
-font-size: 3rem;
-padding: 3rem;
-
-&::before{
-content: '';
-display: block;
-position: absolute;
-width: 100%;
-height: 100%;
-border: 4px solid ${colors.darkGray};
-top: -1rem;
-left: 1rem;
-}
-}
-`;
-
 const MainPageContent = styled.p`
 width: 70%;
 margin: 8rem auto;
@@ -129,7 +62,7 @@ width: 100%;
 const IndexPage = ({ data }) => (
   <>
     <MainPageWrapper>
-      <MainPageHeader>To tylko <span>opinie</span></MainPageHeader>
+      <IntroHeader>To tylko <span>opinie</span></IntroHeader>
       <MainPageContent>
         {data.allDatoCmsIntro.nodes[0].introTitle}
       </MainPageContent>
