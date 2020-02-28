@@ -58,12 +58,13 @@ color: ${colors.errorRed};
 const Button = styled.button`
 border: none;
 background-color: ${colors.lightGray2};
-padding: 1rem 1.8rem;
+padding: 1rem 2rem;
 font-weight: 700;
 position: relative;
 transition: all .3s;
 margin-left: .8rem;
 margin-top: 2rem;
+outline: ${colors.darkGray};
 
 &::before{
 content: '';

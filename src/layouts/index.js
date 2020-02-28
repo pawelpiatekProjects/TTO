@@ -1,15 +1,17 @@
 import React from "react"
-import GlobalStyle from '../assets/styles/globalStyles';
+import GlobalStyle from "../assets/styles/globalStyles"
+import styled from "styled-components"
 import Navigation from "../components/navigation/navigation"
+import SmallNav from "../components/smallNav/smallNav"
 
 
 
-const MainLayout = ({children}) => (
+const MainLayout = ({ children }) => (
   <>
-    <GlobalStyle/>
-    <Navigation/>
+      <Navigation/>
+      <GlobalStyle/>
     {children}
   </>
-);
+)
 
-export default MainLayout;
+export default MainLayout

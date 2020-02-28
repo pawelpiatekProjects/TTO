@@ -27,6 +27,7 @@ top: 0;
 right: 0;
 height: 100vh;
 width: 45%;
+z-index: 10;
 
 @media(max-width: 1200px){
 width: 40%;

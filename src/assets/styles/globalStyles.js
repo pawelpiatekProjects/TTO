@@ -28,7 +28,7 @@ html {
 
   body {
     margin: 0;
-    padding: 8rem 6.5rem 0;
+    padding: 4rem 6.5rem 0;
     font-family: 'Montserrat';
     
     @media(max-width: 550px){
