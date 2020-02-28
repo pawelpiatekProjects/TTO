@@ -96,6 +96,10 @@ background-color: ${props=>props.isActive ? `${colors.white}` : `${colors.darkGr
 border: none;
 }
 
+@media(max-width: 550px){
+margin-left: 5rem;
+}
+
 &::before{
 outline: none;
 z-index: inherit;
@@ -108,7 +112,8 @@ width: 5rem;
 height: .5rem;
 background-color: ${props=>props.isActive ? `${colors.white}` : `${colors.darkGray}`};
 border: none;
-transform: ${props=>props.isActive ? 'rotate(45deg) translateY(1rem)' : 'rotate(0) '};
+transform: ${props=>props.isActive ? 'rotate(135deg) translateY(-1rem)' : 'rotate(0) '};
+transition: all .3s;
 }
 
 &::after{
@@ -123,17 +128,11 @@ width: 5rem;
 height: .5rem;
 background-color: ${props=>props.isActive ? `${colors.white}` : `${colors.darkGray}`};
 border: none;
-transform: ${props=>props.isActive ? 'rotate(-45deg) translateY(-1rem)' : 'rotate(0)'};
+transform: ${props=>props.isActive ? 'rotate(-135deg) translateY(1rem)' : 'rotate(0)'};
+transition: all .3s;
 }
 `;
 
-const SmallNavWrapper = styled(SmallNav)`
- 
-display: block;
-position: fixed;
-top: 50%;
-left: 50%;
-`;
 
 
 

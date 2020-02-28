@@ -18,21 +18,59 @@ display: ${props => props.display ? "block" : "none"};
 
 const MenuWrapper = styled.div`
 position: fixed;
-top: 50%;
+top: 25%;
 left: 50%;
-transform: translate(-50%, -50%);
+transform: translateX(-50%);
 `
 
 const Logo = styled.p`
+font-size: 5rem;
+position: relative;
+ &::before{
+  content: '';
+  position: absolute;
+  top: -.5rem;
+  left: -1.5rem;
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-top: 3px solid ${colors.white};
+  border-left: 3px solid ${colors.white};
+ }
+ 
+ &::after{
+  content: '';
+  position: absolute;
+  bottom: -.5rem;
+  right: -1.5rem;
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-bottom: 3px solid ${colors.white};
+  border-right: 3px solid ${colors.white};
+ }
 
+a{
+text-decoration: none;
+color: ${colors.white};
+}
 `;
 
 const Menu = styled.ul`
-
+  list-style: none;
+  width: 100%;
 `;
 
 const MenuItem = styled.li`
-
+margin: 1rem auto;
+text-align: center;
+a{
+text-decoration: none;
+color: ${colors.white};
+font-size: 3rem;
+width: 100%;
+margin: 0 auto;
+}
 `;
 
 const SmallNav = ({ display, toggle }) => (
