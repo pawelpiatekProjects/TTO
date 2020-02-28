@@ -150,7 +150,7 @@ class Navigation extends Component {
   render(){
     return(
       <NavigationWrapper>
-        <SmallNav display={this.state.isMobile}/>
+        <SmallNav display={this.state.isMobile} toggle={this.onMobileToggle}/>
         <MiniMenu>
           <Hamburger isActive={this.state.isMobile} onClick={this.onMobileToggle}></Hamburger>
         </MiniMenu>
