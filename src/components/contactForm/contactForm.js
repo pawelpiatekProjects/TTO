@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Formik, Field } from "formik"
 import * as colors from "../../assets/styles/variables"
+import axios from 'axios';
 
 const ContactFormWrapper = styled.div`
 
@@ -133,10 +134,15 @@ const ContactForm = () => (
         return errors
       }}
       onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2))
-          setSubmitting(false)
-        }, 400)
+        axios.post('https://us-central1-totylkoopinie-8bfa5.cloudfunctions.net/sendEmail', values)
+          .then((res)=>{
+            console.log(res);
+            setSubmitting(false);
+          })
+          .catch((err)=>{
+            console.log(err);
+            setSubmitting(false);
+          })
       }}
     >
       {({

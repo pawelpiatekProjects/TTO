@@ -8,6 +8,7 @@ import SocialIcons from "../components/socialIcons/socialIcons"
 import Footer from "../components/footer/footer"
 
 
+
 const ContactPageWrapper = styled.div`
  display: flex;
  position: relative;
