@@ -8,6 +8,7 @@ import SmallNav from '../smallNav/smallNav'
 const NavigationWrapper = styled.nav`
  display: grid;
  grid-template-columns: 10% 90%;
+
 `;
 
 const BigMenu = styled.div`
@@ -85,7 +86,7 @@ const MiniMenu = styled.div`
 const Hamburger = styled.button`
 z-index: 1001;
 display: none;
-position: relative;
+position: ${props=>props.isActive ? 'fixed' : 'relative'};
 outline: none;
 @media(max-width: 700px){
 display: block;
@@ -143,7 +144,10 @@ class Navigation extends Component {
 
   onMobileToggle = ()=>{
     const current = this.state.isMobile;
-    this.setState({isMobile: !current})
+    setTimeout(()=>{
+      this.setState({isMobile: !current})
+    },100);
+
   }
 
   render(){

@@ -5,10 +5,12 @@ import ContactForm from "../components/contactForm/contactForm"
 import { graphql } from "gatsby"
 import IntroHeader from "../components/introHeader/introHeader"
 import SocialIcons from "../components/socialIcons/socialIcons"
+import Footer from "../components/footer/footer"
 
 
 const ContactPageWrapper = styled.div`
  display: flex;
+ position: relative;
   flex-direction: column;
  height: calc(100vh - 13rem);
   width: 55%;
@@ -85,6 +87,16 @@ display: none;
 
 `
 
+const FooterWrapper = styled.div`
+position: absolute; 
+bottom: -5rem;
+left: 50%;
+
+@media(max-width: 700px){
+  position: initial;
+}
+`
+
 const ContactPage = ({ data }) => (
   <>
     <ContactPageWrapper>
@@ -95,6 +107,9 @@ const ContactPage = ({ data }) => (
       <ContactFormWrapper>
         <ContactForm/>
       </ContactFormWrapper>
+      <FooterWrapper>
+        <Footer/>
+      </FooterWrapper>
     </ContactPageWrapper>
     <ContactPaggeImage fluid={data.file.childImageSharp.fluid}/>
 

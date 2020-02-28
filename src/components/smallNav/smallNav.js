@@ -9,15 +9,17 @@ position: fixed;
 top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
+
 z-index: 1000;
 width: 100%;
 height: 100vh;
 background-color: ${colors.darkGray};
 display: ${props => props.display ? "block" : "none"};
+
 `
 
 const MenuWrapper = styled.div`
-position: fixed;
+position: absolute;
 top: 25%;
 left: 50%;
 transform: translateX(-50%);
@@ -42,7 +44,7 @@ position: relative;
   content: '';
   position: absolute;
   bottom: -.5rem;
-  right: -1.5rem;
+  right: 0;
   display: block;
   width: 3rem;
   height: 3rem;

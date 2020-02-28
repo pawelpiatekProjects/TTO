@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.div`
-width: 60%;
-height: 5rem;
+//height: 5rem;
+
 `;
 
 const FooterContent = styled.p`

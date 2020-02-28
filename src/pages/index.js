@@ -3,10 +3,11 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import { graphql } from "gatsby"
 import Footer from "../components/footer/footer"
-import * as colors from '../assets/styles/variables';
-import IntroHeader from '../components/introHeader/introHeader';
+import * as colors from "../assets/styles/variables"
+import IntroHeader from "../components/introHeader/introHeader"
 
 const MainPageWrapper = styled.div`
+position: relative;
   display: flex;
   flex-direction: column;
   height: calc(100vh - 13rem);
@@ -36,7 +37,7 @@ width: 40%;
 @media(max-width: 900px){
 display: none;
 }
-`;
+`
 
 const MainPageContent = styled.p`
 width: 70%;
@@ -57,7 +58,17 @@ width: 80%;
 @media(max-width: 500px){
 width: 100%;
 }
-`;
+`
+
+const FooterWrapper = styled.div`
+position: absolute; 
+bottom: -5rem;
+left: 50%;
+
+@media(max-width: 700px){
+  position: initial;
+}
+`
 
 
 const IndexPage = ({ data }) => (
@@ -67,7 +78,9 @@ const IndexPage = ({ data }) => (
       <MainPageContent>
         {data.allDatoCmsIntro.nodes[0].introTitle}
       </MainPageContent>
-      <Footer/>
+      <FooterWrapper>
+        <Footer/>
+      </FooterWrapper>
     </MainPageWrapper>
     <GatsbyImage fluid={data.file.childImageSharp.fluid}/>
   </>
@@ -90,8 +103,7 @@ export const query = graphql`
         }
     }
 
-`;
-
+`
 
 
 export default IndexPage

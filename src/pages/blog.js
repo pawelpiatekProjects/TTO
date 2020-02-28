@@ -2,13 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import ArticlePreview from "../components/articlePreview/articlePreview"
-import GatsbyImage from "gatsby-image";
-import slugify from 'slugify';
+import GatsbyImage from "gatsby-image"
+import slugify from "slugify"
+import Footer from "../components/footer/footer"
 
 const BlogPageWrapper = styled.div`
 width: 80%;
 margin: 5rem auto;
-`;
+`
 
 const BlogPageText = styled.p`
 width: 50%;
@@ -26,7 +27,7 @@ width: 90%;
 @media(max-width: 450px){
 width: 100%;
 }
-`;
+`
 
 const Articles = styled.div`
 display: grid;
@@ -37,27 +38,34 @@ grid-column-gap: 10rem;
 @media(max-width: 950px){
 grid-template-columns:  1fr;
 }
+`
+
+const FooterWrapper = styled.div`
+margin-top: 10rem;
 `;
 
 const Blog = ({ data }) => (
   <BlogPageWrapper>
     <BlogPageText>
-        Morbi nec odio id metus blandit rutrum quis volutpat urna.
-        Phasellus nibh ante, mattis sed elit in, imperdiet venenatis ex.
-        Aenean interdum aliquet lorem, sit amet cursus ex suscipit eu.
+      Morbi nec odio id metus blandit rutrum quis volutpat urna.
+      Phasellus nibh ante, mattis sed elit in, imperdiet venenatis ex.
+      Aenean interdum aliquet lorem, sit amet cursus ex suscipit eu.
     </BlogPageText>
     <Articles>
       {data.allDatoCmsArticle.nodes.map(article => {
-          const slug=slugify(article.title,{lower: true})
-            return(
+        const slug = slugify(article.title, { lower: true })
+        return (
           <ArticlePreview
             slug={slug}
             title={article.title}
             image={article.featuredImage.fluid}/>
 
-            )
+        )
       })}
     </Articles>
+    <FooterWrapper>
+      <Footer/>
+    </FooterWrapper>
   </BlogPageWrapper>
 )
 
