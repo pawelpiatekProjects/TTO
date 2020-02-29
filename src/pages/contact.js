@@ -101,7 +101,6 @@ left: 50%;
 
 const ContactPage = ({ data }) => (
   <>
-    <Popup/>
     <ContactPageWrapper>
       <TopContainer>
         <SocialIcons/>

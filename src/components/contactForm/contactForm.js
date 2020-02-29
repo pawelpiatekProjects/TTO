@@ -1,8 +1,9 @@
-import React from "react"
+import React, {Component} from "react"
 import styled from "styled-components"
 import { Formik, Field } from "formik"
 import * as colors from "../../assets/styles/variables"
 import axios from 'axios';
+import Popup from "../popup/popup"
 
 const ContactFormWrapper = styled.div`
 
@@ -111,85 +112,110 @@ const textArea = ({field, formik, ...props}) => {
   return <textarea {...field} {...props}></textarea>
 }
 
+//todo: move popupOpen to 'then' when sending email will be working
+//todo: remove values from form after sending
+class ContactForm extends Component {
+  state={
+    isPopupOpen: false
+  }
 
-const ContactForm = () => (
-  <ContactFormWrapper>
-    <Formik
-      initialValues={{ email: "", name: "", message: ""}}
-      validate={values => {
-        const errors = {}
-        if (!values.email) {
-          errors.email = "E-mail jest wymagany"
-        } else if (
-          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        ) {
-          errors.email = "Nieprawidłowy adres email"
-        }
-        if(!values.name){
-          errors.name = "Imię i nazwisko są wymagane"
-        }
-        if(!values.message){
-          errors.message = "Wiadomość jest wymagana"
-        }
-        return errors
-      }}
-      onSubmit={(values, { setSubmitting }) => {
-        axios.post('https://us-central1-totylkoopinie-8bfa5.cloudfunctions.net/sendEmail', values)
-          .then((res)=>{
-            console.log(res);
-            setSubmitting(false);
-          })
-          .catch((err)=>{
-            console.log(err);
-            setSubmitting(false);
-          })
-      }}
-    >
-      {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isSubmitting,
-          /* and other goodies */
-        }) => (
-        <Form onSubmit={handleSubmit}>
-          <Label>Imię i nazwisko</Label>
-          <Input
-            type="name"
-            name="name"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.name}
-          />
-          <Error>
-            {errors.name && touched.name && errors.name}
-          </Error>
-          <Label>E-mail</Label>
-          <Input
-            type="email"
-            name="email"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.email}
-          />
-          <Error>
-            {errors.email && touched.email && errors.email}
-          </Error>
-          <Label>Wiadomość</Label>
-          <TextArea name="message" placeholder="" component={textArea} rows="7"></TextArea>
-          <Error>
-            {errors.message && touched.message && errors.message}
-          </Error>
-          <Button type="submit" disabled={isSubmitting}>
-            Wyślij
-          </Button>
-        </Form>
-      )}
-    </Formik>
-  </ContactFormWrapper>
-)
+  onOpenModal = () => {
+    setTimeout(() => {
+      this.setState({ isPopupOpen: true })
+    },300);
+  }
+
+  onCloseModal = () =>{
+    setTimeout(() => {
+      this.setState({ isPopupOpen: false })
+    },300);
+  }
+
+  render(){
+    return(
+      <ContactFormWrapper>
+        <Popup isOpen={this.state.isPopupOpen} close={this.onCloseModal}/>
+        <Formik
+          initialValues={{ email: "", name: "", message: "" }}
+          validate={values => {
+            const errors = {}
+            if (!values.email) {
+              errors.email = "E-mail jest wymagany"
+            } else if (
+              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+            ) {
+              errors.email = "Nieprawidłowy adres email"
+            }
+            if (!values.name) {
+              errors.name = "Imię i nazwisko są wymagane"
+            }
+            if (!values.message) {
+              errors.message = "Wiadomość jest wymagana"
+            }
+            return errors
+          }}
+          onSubmit={(values, { setSubmitting }) => {
+            this.onOpenModal();
+            axios.post('https://us-central1-totylkoopinie-8bfa5.cloudfunctions.net/sendEmail', values)
+              .then((res) => {
+                console.log(res);
+                setSubmitting(false);
+              })
+              .catch((err) => {
+                console.log(err);
+                setSubmitting(false);
+              })
+          }}
+        >
+          {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+              /* and other goodies */
+            }) => (
+            <Form onSubmit={handleSubmit}>
+
+              <Label>Imię i nazwisko</Label>
+              <Input
+                type="name"
+                name="name"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.name}
+              />
+              <Error>
+                {errors.name && touched.name && errors.name}
+              </Error>
+              <Label>E-mail</Label>
+              <Input
+                type="email"
+                name="email"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.email}
+              />
+              <Error>
+                {errors.email && touched.email && errors.email}
+              </Error>
+              <Label>Wiadomość</Label>
+              <TextArea name="message" placeholder="" component={textArea} rows="7"></TextArea>
+              <Error>
+                {errors.message && touched.message && errors.message}
+              </Error>
+              <Button type="submit" disabled={isSubmitting}>
+                Wyślij
+              </Button>
+            </Form>
+          )}
+        </Formik>
+      </ContactFormWrapper>
+    )
+  }
+
+}
 
 export default ContactForm

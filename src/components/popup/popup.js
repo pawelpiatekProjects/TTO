@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import * as colors from '../../assets/styles/variables';
 
 const PopupBackground = styled.div`
+display: ${props=>props.isOpen ? 'block' : 'none'};
 width: 100%;
 height: 100vh;
 position: fixed;
@@ -90,11 +91,11 @@ margin: 0 auto;
 padding: 3rem 1rem;
 `;
 
-const Popup = () => (
-  <PopupBackground>
+const Popup = ({isOpen, close}) => (
+  <PopupBackground isOpen={isOpen} onClick={close}>
     <PopupWrapper>
       <PopupHeader>Wysłano!!!</PopupHeader>
-      <PopupExit></PopupExit>
+      <PopupExit onClick={close}></PopupExit>
       <PopupContent>
         Dziękujemy za wysłanie wiadomości. Pozostaniemy w kontakcie
       </PopupContent>
