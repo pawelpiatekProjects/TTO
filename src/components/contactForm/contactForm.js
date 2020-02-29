@@ -113,7 +113,7 @@ const textArea = ({field, formik, ...props}) => {
 }
 
 //todo: move popupOpen to 'then' when sending email will be working
-//todo: remove values from form after sending
+//todo: create separate submit function
 class ContactForm extends Component {
   state={
     isPopupOpen: false
@@ -154,8 +154,12 @@ class ContactForm extends Component {
             }
             return errors
           }}
-          onSubmit={(values, { setSubmitting }) => {
+          onSubmit={(values, { setSubmitting, resetForm }) => {
             this.onOpenModal();
+            setTimeout(()=>{
+              resetForm();
+            },300)
+
             axios.post('https://us-central1-totylkoopinie-8bfa5.cloudfunctions.net/sendEmail', values)
               .then((res) => {
                 console.log(res);

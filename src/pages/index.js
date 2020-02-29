@@ -41,7 +41,7 @@ display: none;
 
 const MainPageContent = styled.p`
 width: 70%;
-margin: 8rem auto;
+margin: 20rem auto 8rem auto;
 font-size: 1.6rem;
 
 @media(max-width: 900px){
@@ -49,6 +49,7 @@ width: 60%;
 text-align: left;
 padding: 0 3rem;
 font-size: 1.8rem;
+margin: 8rem auto;
 }
 
 @media(max-width: 700px){

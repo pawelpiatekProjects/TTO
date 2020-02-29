@@ -23,6 +23,18 @@ background-color: ${colors.white};
 width: 40%;
 padding: 3rem;
 border: 3px solid ${colors.darkGray};
+
+@media(max-width: 1200px){
+width: 50%;
+}
+
+@media(max-width: 900px){
+width: 60%;
+}
+
+@media(max-width: 700px){
+width: 80%;
+}
 `;
 
 const PopupHeader = styled.h1`
@@ -33,6 +45,14 @@ background-color: ${colors.lightGray2};
 width: 40%;
 padding: 3rem;
 position: relative;
+
+@media(max-width: 1500px){
+font-size: 2rem;
+}
+
+@media(max-width: 500px){
+width: 80%;
+}
 
 &::before{
 width: 5rem;
@@ -89,6 +109,10 @@ font-size: 2rem;
 width: 60%;
 margin: 0 auto;
 padding: 3rem 1rem;
+
+@media(max-width: 500px){
+width: 80%;
+}
 `;
 
 const Popup = ({isOpen, close}) => (
