@@ -6,6 +6,7 @@ import { graphql } from "gatsby"
 import IntroHeader from "../components/introHeader/introHeader"
 import SocialIcons from "../components/socialIcons/socialIcons"
 import Footer from "../components/footer/footer"
+import Popup from '../components/popup/popup';
 
 
 
@@ -100,6 +101,7 @@ left: 50%;
 
 const ContactPage = ({ data }) => (
   <>
+    <Popup/>
     <ContactPageWrapper>
       <TopContainer>
         <SocialIcons/>
