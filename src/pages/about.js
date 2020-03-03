@@ -9,7 +9,7 @@ import Footer from "../components/footer/footer"
 const AboutPageWrapper = styled.div`
 display: grid;
 grid-template-columns: repeat(6,1fr);
-grid-template-rows:  auto 5rem;
+grid-template-rows:  auto;
   width: 55%;
   align-items: center;
    height: calc(100vh - 7rem);
@@ -72,6 +72,7 @@ margin: 4rem auto;
 const FooterWrapper = styled.div`
 grid-column: 1/-1;
 grid-row: 2/span 1;
+align-self: end;
 //position: absolute; 
 //bottom: -5rem;
 //left: 50%;
