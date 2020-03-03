@@ -8,13 +8,18 @@ import Footer from "../components/footer/footer"
 
 const BlogPageWrapper = styled.div`
 width: 80%;
+min-height: 100vh;
 margin: 5rem auto 1rem auto;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: auto;
 `
 
 const BlogPageText = styled.p`
 width: 50%;
 margin: 8rem 0;
 font-size: 1.6rem;
+grid-row: 1/span 1;
 
 @media(max-width: 950px){
 width: 80%;
@@ -30,10 +35,12 @@ width: 100%;
 `
 
 const Articles = styled.div`
+grid-row: 2/span 1;
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 grid-row-gap: 8rem;
 grid-column-gap: 10rem;
+
 
 @media(max-width: 950px){
 grid-template-columns:  1fr;
@@ -42,6 +49,7 @@ grid-template-columns:  1fr;
 
 const FooterWrapper = styled.div`
 margin-top: 10rem;
+grid-row: 3/span 1;
 `;
 
 const Blog = ({ data }) => (
