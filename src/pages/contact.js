@@ -12,33 +12,33 @@ import Footer from "../components/footer/footer"
 const ContactPageWrapper = styled.div`
 display: grid;
 grid-template-columns: repeat(6,1fr);
-grid-template-rows: 10rem auto 5rem;
+grid-template-rows: auto;
   width: 55%;
   align-items: center;
+  
    height: calc(100vh - 7rem);
-   grid-gap: 5rem;
+   grid-gap: 1rem;
+   padding-top: 5rem;
+   padding-right: 5rem;
    
-       @media(max-width: 900px){
-grid-template-rows: 10rem auto auto 5rem;
-}
  
     @media(max-width: 1200px){
 width: 60%;
 }
 //
 @media(max-width: 1050px){
-
+    grid-template-rows: auto;
     width: 80%;
-    margin: 0 auto;
+    margin: 8rem auto 0 auto;
+    align-items: end;
+    height: calc(100vh - 15rem);
   
  }
  
- @media(max-width: 900px){
- margin-top: 8rem;
- }
  
  @media(max-width: 450px){
  width: 90%;
+ grid-gap: 3rem;
  }
 `;
 
@@ -48,14 +48,13 @@ const SocialIconsWrapper = styled.div`
   
   @media(max-width: 1050px){
     text-align: center;
-  }
-  
-  
- @media(max-width: 900px){
- grid-column: 1/ -1;
+     grid-column: 1/ -1;
  width: 100%;
  margin: 0 auto;
- }
+ align-self: end;
+  }
+  
+
 `
 
 const ContactFormWrapper = styled.div`
@@ -63,7 +62,7 @@ grid-column: 1/ -1;
 grid-row: 2/span 1;
 
 
- @media(max-width: 900px){
+ @media(max-width: 1050px){
   grid-row: 3/ span 1;
   //grid-column: 1/-1;
  }
@@ -78,7 +77,7 @@ grid-column: 4/-1;
 grid-row: 1/span 1;
 
 
- @media(max-width: 900px){
+ @media(max-width: 1050px){
  grid-column: 1/ -1;
  grid-row: 2/span 1;
  
@@ -110,11 +109,12 @@ const FooterWrapper = styled.div`
 grid-column: 1/-1;
 grid-row: 3/span 1;
 padding: 2rem;
+align-self: end;
 p{
 margin: 0;
 }
 
- @media(max-width: 900px){
+ @media(max-width: 1050px){
   grid-row: 4/span 1;
  }
 

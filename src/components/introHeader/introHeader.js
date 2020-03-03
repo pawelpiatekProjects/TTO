@@ -6,12 +6,11 @@ const IntroHeaderWrapper = styled.h1`
 text-align: right;
 font-size: 6rem;
 position: relative;
-//margin: 14rem 3rem 5rem 0;
   span{
   display: block;
   }
   
-  @media(max-width: 900px){
+  @media(max-width: 1050px){
 width: 60%;
 
 text-align: center;
