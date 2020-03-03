@@ -7,9 +7,11 @@ import * as colors from "../assets/styles/variables"
 import IntroHeader from "../components/introHeader/introHeader"
 
 const MainPageWrapper = styled.div`
+align-items: center;
 position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   height: calc(100vh - 13rem);
   width: 55%;
   
@@ -17,8 +19,9 @@ position: relative;
 width: 60%;
 }
 
-@media(max-width: 900px){
+@media(max-width: 1050px){
 width: 100%;
+margin-top: 5rem;
 }
 `
 
@@ -34,12 +37,26 @@ z-index: 10;
 width: 40%;
 }
 
-@media(max-width: 900px){
+@media(max-width: 1050px){
 display: none;
 }
 `
+
+const IntroHeaderWrapper = styled.div`
+grid-row: 1/span 1;
+
+@media(max-width: 1050px){
+h1{
+margin: 0 auto;
+}
+
+
+}
+`
+
 //todo: fix margin on small devices
 const MainPageContent = styled.p`
+grid-row: 2/ span 1;
 width: 70%;
 margin: 0rem auto 8rem auto;
 font-size: 1.6rem;
@@ -89,26 +106,23 @@ width: 90%;
 `
 
 const FooterWrapper = styled.div`
-position: absolute; 
-bottom: -5rem;
-left: 50%;
-
-@media(max-width: 1200px){
-  position: initial;
-}
+grid-row: 3/span 1;
+align-self: end;
 `
 
 
 const IndexPage = ({ data }) => (
   <>
     <MainPageWrapper>
-      <IntroHeader>To tylko <span>opinie</span></IntroHeader>
+      <IntroHeaderWrapper>
+        <IntroHeader>To tylko <span>opinie</span></IntroHeader>
+      </IntroHeaderWrapper>
       <MainPageContent>
         {data.allDatoCmsIntro.nodes[0].introTitle}
       </MainPageContent>
-      {/*<FooterWrapper>*/}
-        {/*<Footer/>*/}
-      {/*</FooterWrapper>*/}
+      <FooterWrapper>
+        <Footer/>
+      </FooterWrapper>
     </MainPageWrapper>
     <GatsbyImage fluid={data.file.childImageSharp.fluid}/>
   </>
