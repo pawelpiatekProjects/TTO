@@ -11,7 +11,7 @@ const ContactFormWrapper = styled.div`
 
 const Form = styled.form`
 width: 60%;
-margin: 5rem auto;
+margin: 0rem auto;
 
 @media(max-width: 1050px){
 width: 80%;

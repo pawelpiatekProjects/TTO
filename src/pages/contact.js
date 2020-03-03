@@ -18,7 +18,7 @@ grid-template-rows: auto;
   
    height: calc(100vh - 7rem);
    grid-gap: 1rem;
-   padding-top: 5rem;
+   //padding-top: 5rem;
    padding-right: 5rem;
    
  
@@ -108,7 +108,7 @@ display: none;
 const FooterWrapper = styled.div`
 grid-column: 1/-1;
 grid-row: 3/span 1;
-padding: 2rem;
+//padding: 2rem;
 align-self: end;
 p{
 margin: 0;
