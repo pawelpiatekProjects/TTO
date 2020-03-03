@@ -12,7 +12,7 @@ position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  height: calc(100vh - 13rem);
+  height: calc(100vh - 7rem);
   width: 55%;
   
   @media(max-width: 1200px){
@@ -22,6 +22,7 @@ width: 60%;
 @media(max-width: 1050px){
 width: 100%;
 margin-top: 5rem;
+height: calc(100vh - 15rem);
 }
 `
 
@@ -44,6 +45,7 @@ display: none;
 
 const IntroHeaderWrapper = styled.div`
 grid-row: 1/span 1;
+margin-right: 5rem;
 
 @media(max-width: 1050px){
 h1{
