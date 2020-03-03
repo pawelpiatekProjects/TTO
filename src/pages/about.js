@@ -71,9 +71,9 @@ const About = ({ data }) => (
         </AboutPageText>
 
       </AboutPageContent>
-      <FooterWrapper>
-        <Footer/>
-      </FooterWrapper>
+      {/*<FooterWrapper>*/}
+        {/*<Footer/>*/}
+      {/*</FooterWrapper>*/}
     </AboutPageWrapper>
     <GatsbyImage fluid={data.file.childImageSharp.fluid}/>
   </>

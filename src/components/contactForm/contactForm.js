@@ -11,9 +11,9 @@ const ContactFormWrapper = styled.div`
 
 const Form = styled.form`
 width: 60%;
-margin: 10rem auto;
+margin: 5rem auto;
 
-@media(max-width: 700px){
+@media(max-width: 1050px){
 width: 80%;
 }
 
@@ -134,7 +134,11 @@ class ContactForm extends Component {
   render(){
     return(
       <ContactFormWrapper>
-        <Popup isOpen={this.state.isPopupOpen} close={this.onCloseModal}/>
+        <Popup
+          header="Wysłano!!!"
+          content="Dziękujemy za wysłanie wiadomości. Pozostaniemy w kontakcie"
+          isOpen={this.state.isPopupOpen}
+          close={this.onCloseModal}/>
         <Formik
           initialValues={{ email: "", name: "", message: "" }}
           validate={values => {

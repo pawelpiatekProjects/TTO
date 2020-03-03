@@ -77,7 +77,8 @@ const NavigationListItemLink = styled(Link)`
   transform: translate(-5px, -5px);
   box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.75);
   }
-`
+`;
+
 
 const MiniMenu = styled.div`
 

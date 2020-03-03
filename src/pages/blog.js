@@ -8,7 +8,7 @@ import Footer from "../components/footer/footer"
 
 const BlogPageWrapper = styled.div`
 width: 80%;
-margin: 5rem auto;
+margin: 5rem auto 1rem auto;
 `
 
 const BlogPageText = styled.p`
@@ -56,6 +56,7 @@ const Blog = ({ data }) => (
         const slug = slugify(article.title, { lower: true })
         return (
           <ArticlePreview
+            key={article.id}
             slug={slug}
             title={article.title}
             image={article.featuredImage.fluid}/>

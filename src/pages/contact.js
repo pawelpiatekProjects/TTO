@@ -6,70 +6,87 @@ import { graphql } from "gatsby"
 import IntroHeader from "../components/introHeader/introHeader"
 import SocialIcons from "../components/socialIcons/socialIcons"
 import Footer from "../components/footer/footer"
-import Popup from '../components/popup/popup';
 
 
-
+//todo: fix styling
 const ContactPageWrapper = styled.div`
- display: flex;
- position: relative;
-  flex-direction: column;
- height: calc(100vh - 13rem);
+display: grid;
+grid-template-columns: repeat(6,1fr);
+grid-template-rows: 10rem auto 5rem;
   width: 55%;
-  padding: 3rem;
-  
+  align-items: center;
+   height: calc(100vh - 7rem);
+   grid-gap: 5rem;
+   
+       @media(max-width: 900px){
+grid-template-rows: 10rem auto auto 5rem;
+}
+ 
     @media(max-width: 1200px){
 width: 60%;
 }
+//
+@media(max-width: 1050px){
 
-@media(max-width: 900px){
-width: 100%;
+    width: 80%;
+    margin: 0 auto;
+  
+ }
+ 
+ @media(max-width: 900px){
+ margin-top: 8rem;
+ }
+ 
+ @media(max-width: 450px){
+ width: 90%;
+ }
+`;
+
+const SocialIconsWrapper = styled.div`
+  grid-column: 1/ span 3;
+  grid-row: 1/ span 1;
+  
+  @media(max-width: 1050px){
+    text-align: center;
+  }
+  
+  
+ @media(max-width: 900px){
+ grid-column: 1/ -1;
+ width: 100%;
+ margin: 0 auto;
  }
 `
 
 const ContactFormWrapper = styled.div`
-  @media(max-width: 900px){
-  margin-top: 15rem;
-  }
-`;
+grid-column: 1/ -1;
+grid-row: 2/span 1;
 
-const ContactFormHeader = styled(IntroHeader)`
 
-`;
-
-const TopContainer = styled.div`
-position: relative;
-margin-top: 14rem;
-  h1{
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 0;
-    
-  }
-  div{
-  display: inline-block;
-  margin-top: 2rem;
-   
-  }
-  
-  @media(max-width: 900px){
-  margin-top: 5rem;
-    h1{
-    display: block;
-    right: 50%;
-    top: 10rem;
-    transform: translate(50%);
-    }
-    div{
-    display: block;
-    }
+ @media(max-width: 900px){
+  grid-row: 3/ span 1;
+  //grid-column: 1/-1;
  }
-`;
+
+//@media(max-width: 450px){
+//  grid-column: 1/-1;
+//}
+`
+
+const ContactFormHeaderWrapper = styled.div`
+grid-column: 4/-1;
+grid-row: 1/span 1;
 
 
-
+ @media(max-width: 900px){
+ grid-column: 1/ -1;
+ grid-row: 2/span 1;
+ 
+  h1{
+  margin:  0 auto;
+  }
+ }
+`
 
 const ContactPaggeImage = styled(Image)`
   position: absolute !important;
@@ -83,29 +100,35 @@ z-index: 10;
 width: 40%;
 }
 
-@media(max-width: 900px){
+@media(max-width: 1050px){
 display: none;
 }
 
 `
 
 const FooterWrapper = styled.div`
-position: absolute; 
-bottom: -5rem;
-left: 50%;
-
-@media(max-width: 700px){
-  position: initial;
+grid-column: 1/-1;
+grid-row: 3/span 1;
+padding: 2rem;
+p{
+margin: 0;
 }
+
+ @media(max-width: 900px){
+  grid-row: 4/span 1;
+ }
+
 `
 
 const ContactPage = ({ data }) => (
   <>
     <ContactPageWrapper>
-      <TopContainer>
+      <SocialIconsWrapper>
         <SocialIcons/>
-        <ContactFormHeader>Kontakt</ContactFormHeader>
-      </TopContainer>
+      </SocialIconsWrapper>
+      <ContactFormHeaderWrapper>
+        <IntroHeader>Kontakt</IntroHeader>
+      </ContactFormHeaderWrapper>
       <ContactFormWrapper>
         <ContactForm/>
       </ContactFormWrapper>

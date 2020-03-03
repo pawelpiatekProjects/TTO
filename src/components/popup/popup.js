@@ -115,13 +115,13 @@ width: 80%;
 }
 `;
 
-const Popup = ({isOpen, close}) => (
+const Popup = ({isOpen, close, header, content}) => (
   <PopupBackground isOpen={isOpen} onClick={close}>
     <PopupWrapper>
-      <PopupHeader>Wysłano!!!</PopupHeader>
+      <PopupHeader>{header}</PopupHeader>
       <PopupExit onClick={close}></PopupExit>
       <PopupContent>
-        Dziękujemy za wysłanie wiadomości. Pozostaniemy w kontakcie
+        {content}
       </PopupContent>
     </PopupWrapper>
   </PopupBackground>

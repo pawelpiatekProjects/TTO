@@ -38,17 +38,44 @@ width: 40%;
 display: none;
 }
 `
-
+//todo: fix margin on small devices
 const MainPageContent = styled.p`
 width: 70%;
-margin: 20rem auto 8rem auto;
+margin: 0rem auto 8rem auto;
 font-size: 1.6rem;
+background-color: ${colors.lightGray2};
+padding: 5rem;
+position: relative;
+
+&::before{
+content: '';
+position: absolute;
+display: block;
+width: 10rem;
+height: 10rem;
+top: -1.5rem;
+left: -1.5rem;
+border-top: 6px solid  ${colors.darkGray};
+border-left: 6px solid  ${colors.darkGray};
+}
+
+&::after{
+content: '';
+position: absolute;
+display: block;
+width: 10rem;
+height: 10rem;
+bottom: -1.5rem;
+right: -1.5rem;
+border-bottom: 6px solid  ${colors.darkGray};
+border-right: 6px solid  ${colors.darkGray};
+}
 
 @media(max-width: 900px){
 width: 60%;
 text-align: left;
-padding: 0 3rem;
-font-size: 1.8rem;
+padding: 2rem 3rem;
+font-size: 1.4rem;
 margin: 8rem auto;
 }
 
@@ -57,7 +84,7 @@ width: 80%;
 }
 
 @media(max-width: 500px){
-width: 100%;
+width: 90%;
 }
 `
 
@@ -66,7 +93,7 @@ position: absolute;
 bottom: -5rem;
 left: 50%;
 
-@media(max-width: 700px){
+@media(max-width: 1200px){
   position: initial;
 }
 `
@@ -79,9 +106,9 @@ const IndexPage = ({ data }) => (
       <MainPageContent>
         {data.allDatoCmsIntro.nodes[0].introTitle}
       </MainPageContent>
-      <FooterWrapper>
-        <Footer/>
-      </FooterWrapper>
+      {/*<FooterWrapper>*/}
+        {/*<Footer/>*/}
+      {/*</FooterWrapper>*/}
     </MainPageWrapper>
     <GatsbyImage fluid={data.file.childImageSharp.fluid}/>
   </>
