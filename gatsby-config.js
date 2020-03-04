@@ -40,11 +40,11 @@ module.exports = {
         ],
       },
     },
-    //todo: move api token to .env
+
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: "c9e64ce7fe435923458d856e477881",
+        apiToken: process.env.API_DATA_CMS,
       },
     },
     // {

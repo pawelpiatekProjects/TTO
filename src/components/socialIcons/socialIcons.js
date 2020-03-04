@@ -11,7 +11,7 @@ text-align: center;
 }
 `
 
-//todo: add links to social icons
+
 const SocialIcon = styled(FontAwesomeIcon)`
   font-size: 3rem;
   margin: 0 2rem;

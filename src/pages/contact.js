@@ -8,7 +8,7 @@ import SocialIcons from "../components/socialIcons/socialIcons"
 import Footer from "../components/footer/footer"
 
 
-//todo: fix styling
+
 const ContactPageWrapper = styled.div`
 display: grid;
 grid-template-columns: repeat(6,1fr);

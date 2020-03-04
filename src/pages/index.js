@@ -56,7 +56,7 @@ margin: 0 auto;
 }
 `
 
-//todo: fix margin on small devices
+
 const MainPageContent = styled.p`
 grid-row: 2/ span 1;
 width: 70%;
