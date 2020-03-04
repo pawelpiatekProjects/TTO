@@ -112,11 +112,27 @@ const textArea = ({field, formik, ...props}) => {
   return <textarea {...field} {...props}></textarea>
 }
 
-//todo: move popupOpen to 'then' when sending email will be working
-//todo: create separate submit function
+
 class ContactForm extends Component {
   state={
     isPopupOpen: false
+  }
+
+  onSubmit = (values, { setSubmitting, resetForm }) =>{
+    this.onOpenModal();
+    setTimeout(()=>{
+      resetForm();
+    },300)
+
+    axios.post('https://us-central1-totylkoopinie-8bfa5.cloudfunctions.net/sendEmail', values)
+      .then((res) => {
+        console.log(res);
+        setSubmitting(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setSubmitting(false);
+      })
   }
 
   onOpenModal = () => {
@@ -158,22 +174,7 @@ class ContactForm extends Component {
             }
             return errors
           }}
-          onSubmit={(values, { setSubmitting, resetForm }) => {
-            this.onOpenModal();
-            setTimeout(()=>{
-              resetForm();
-            },300)
-
-            axios.post('https://us-central1-totylkoopinie-8bfa5.cloudfunctions.net/sendEmail', values)
-              .then((res) => {
-                console.log(res);
-                setSubmitting(false);
-              })
-              .catch((err) => {
-                console.log(err);
-                setSubmitting(false);
-              })
-          }}
+          onSubmit={this.onSubmit}
         >
           {({
               values,
